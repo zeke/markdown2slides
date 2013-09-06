@@ -1,47 +1,48 @@
-# Preso
+# markdown2slides
 
-Write your slideshow content in a markdown file without compromising stylability.
+Markdown is great for content, but it's not ideal for create slide decks. Markdown doesn't provide 
+a way to wrap each slide in a parent element, making it very difficult to style your slides with CSS.
 
-## Why
+markdown2slides is a node module, intended to be used in a grunt workflow, that lets your write your 
+slideshow content in markdown without compromising stylability.
 
-- Preso is intended to be used for static HTML site generation.
-- Preso splits markdown files by `hr` elements into an `ol`, making it easier to style each `li` "slide" with CSS.
-- Preso is blocky, synchrnous, and non-streamy. In other words, don't use it at runtime.
+## Installation
 
-## Sample
+```
+npm install markdown2slides
+```
 
-This markdown:
+## Usage
 
-```md
----
+Write your slideshow content in a markdown file, using horizontal
+rules (---) to separate each slide:
 
+```markdown
 slide 1
 
 ---
 
 slide 2
+
+---
+
+slide 3
 ```
 
-becomes this HTML:
-
-```html
-<ol>
-  <li>slide 1</li>
-  <li>slide 2</li>
-</ol>
-```
-
-## Installation
-
-```
-npm install preso
-```
-
-## Usage
+Use markdown2slides to convert your markdown file into an ordered list:
 
 ```js
-var preso = require('preso')
-var slides = preso('articles/foo.md')
+var slides = require('markdown2slides')('path/to/my-preso.md')
+```
+
+The value of `slides` is now an HTML string that looks like this:
+
+```html
+<ol class="slides">
+  <li>slide 1</li>
+  <li>slide 2</li>
+  <li>slide 3</li>
+</ol>
 ```
 
 ## Tests
@@ -49,3 +50,7 @@ var slides = preso('articles/foo.md')
 ```
 npm test
 ```
+
+## Caveat Emptor
+
+markdown2slides is intended to be used for static HTML site generation. It is blocky/synchronous/non-streamy. In other words, don't use it at runtime in your node apps.
