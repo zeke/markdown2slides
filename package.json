@@ -1,6 +1,6 @@
 {
   "name": "markdown2slides",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Write your slide deck in markdown without compromising stylability.",
   "main": "index.js",
   "author": "Zeke Sikelianos <zeke@sikelianos.com>",
