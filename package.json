@@ -1,7 +1,7 @@
 {
-  "name": "markdow2slides",
-  "version": "0.0.0",
-  "description": "Write your slideshow content in markdown without compromising stylability.",
+  "name": "markdown2slides",
+  "version": "0.1.0",
+  "description": "Write your slide deck in markdown without compromising stylability.",
   "main": "index.js",
   "author": "Zeke Sikelianos <zeke@sikelianos.com>",
   "license": "MIT",
